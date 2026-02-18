@@ -1795,10 +1795,31 @@
                 });
 
                 if (response.status === 201) {
-                    // Success — show confirmation
+                    // Success — show confirmation + scheduling CTA
                     btn.textContent = 'Thank You \u2014 We\u2019ll Be In Touch';
                     btn.style.background = 'rgba(201, 169, 110, 0.3)';
                     btn.style.color = '#C9A96E';
+
+                    // Add scheduling link below the button
+                    const scheduleCTA = document.createElement('div');
+                    scheduleCTA.style.cssText = 'text-align: center; margin-top: 1.25rem;';
+                    scheduleCTA.innerHTML = `
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 0.75rem;">
+                            Want to get on the calendar now?
+                        </p>
+                        <a href="https://socalestateplanners.cliogrow.com/book/2884b5fe50a3f2e9e20c3bde415203df"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           style="display: inline-block; font-family: var(--font-body); font-size: 0.8rem;
+                                  padding: 0.7rem 1.75rem; border: 1px solid #C9A96E; color: #C9A96E;
+                                  text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase;
+                                  font-weight: 500; transition: all 0.3s ease;"
+                           onmouseover="this.style.background='#C9A96E'; this.style.color='#0B1D33';"
+                           onmouseout="this.style.background='transparent'; this.style.color='#C9A96E';">
+                            Schedule Your Consultation
+                        </a>
+                    `;
+                    btn.parentNode.appendChild(scheduleCTA);
 
                     // Track successful submission in GA4
                     if (typeof gtag === 'function') {
@@ -1807,6 +1828,7 @@
                             event_label: serviceText
                         });
                     }
+                }
                 } else {
                     throw new Error('Clio API returned status ' + response.status);
                 }
