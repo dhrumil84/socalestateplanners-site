@@ -22,6 +22,14 @@
   "url": "https://socalestateplanners.com",
   "telephone": "+1-949-738-1420",
   "email": "dhrumil.patel@socalestateplanners.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "620 Newport Center Drive, Suite 1100",
+    "addressLocality": "Newport Beach",
+    "addressRegion": "CA",
+    "postalCode": "92660",
+    "addressCountry": "US"
+  },
   "image": "https://socalestateplanners.com/favicon-512.png",
   "logo": {
     "@type": "ImageObject",
@@ -1287,6 +1295,16 @@
             font-weight: 500;
         }
 
+        .footer-address {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.25);
+            font-weight: 400;
+            margin-top: 0.35rem;
+            letter-spacing: 0.02em;
+        }
+
         .footer-legal {
             font-size: 0.75rem;
             color: rgba(255,255,255,0.25);
@@ -1466,9 +1484,9 @@
             </div>
             <div class="hero-badge">
                 <div class="icon">
-                    <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 </div>
-                Secure Digital Workflow
+                Newport Beach, CA
             </div>
         </div>
     </div>
@@ -1646,6 +1664,12 @@
                     <div class="icon">
                         <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                     </div>
+                    <span>620 Newport Center Drive, Suite 1100<br>Newport Beach, CA 92660</span>
+                </div>
+                <div class="contact-info-item reveal">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    </div>
                     <span>Serving Orange County &amp; Greater Southern California</span>
                 </div>
 
@@ -1698,7 +1722,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-inner">
-            <div class="footer-brand">Law Office of Dhrumil Patel</div>
+            <div class="footer-brand">Law Office of Dhrumil Patel<span class="footer-address">620 Newport Center Drive, Suite 1100, Newport Beach, CA 92660</span></div>
             <div class="footer-legal">
                 &copy; 2026 Law Office of Dhrumil Patel. All rights reserved.<br>
                 Attorney advertising. This website is for informational purposes only and does not constitute legal advice. No attorney-client relationship is formed by use of this site.
