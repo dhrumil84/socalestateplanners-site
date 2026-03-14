@@ -392,11 +392,7 @@
 </script>
 
 
-<!-- SCHEMA 6: FAQPage (Common Estate Planning Questions)
-     NOTE: Add this only once you have an FAQ section on-page.
-     Google requires FAQ schema to match visible page content.
-     When you add FAQ content to your site, uncomment this block. -->
-<!--
+<!-- SCHEMA 6: FAQPage (Common Estate Planning Questions) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -423,7 +419,7 @@
       "name": "How much does estate planning cost in Orange County?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Estate planning costs vary based on the complexity of your situation. A comprehensive estate plan including a revocable living trust, pour-over will, powers of attorney, and advance healthcare directive typically involves a flat fee. Contact our office for a free initial consultation where we can assess your needs and provide transparent pricing."
+        "text": "A comprehensive estate plan — including a revocable living trust, pour-over will, powers of attorney, and advance healthcare directive — is offered at a flat fee: $2,500 for individuals and $3,500 for couples. No hourly billing, no surprise invoices. Your initial consultation is free."
       }
     },
     {
@@ -445,7 +441,6 @@
   ]
 }
 </script>
--->
 
 
 <!-- SCHEMA 7: BreadcrumbList (Single-Page Navigation) -->
@@ -1098,6 +1093,121 @@
             line-height: 1.7;
         }
 
+        /* ===== FAQ ===== */
+        .faq {
+            background: var(--cream-dark);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin-top: 3.5rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(11, 29, 51, 0.08);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.75rem 0;
+            cursor: pointer;
+            gap: 2rem;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-question h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--navy);
+            font-weight: 600;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover h3 {
+            color: var(--gold);
+        }
+
+        .faq-toggle {
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(201, 169, 110, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .faq-toggle svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--gold);
+            stroke-width: 2;
+            fill: none;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .faq-item.active .faq-toggle svg {
+            stroke: var(--navy);
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 0 2rem;
+        }
+
+        .faq-answer-inner p {
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            line-height: 1.9;
+        }
+
+        .faq-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2.5rem;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .faq-more:hover {
+            color: var(--gold-light);
+            gap: 0.75rem;
+        }
+
+        .faq-more svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
         /* ===== CTA / CONTACT ===== */
         .contact {
             background: var(--navy);
@@ -1413,6 +1523,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .faq-question h3 {
+                font-size: 1.05rem;
+            }
+
             .form-row {
                 grid-template-columns: 1fr;
             }
@@ -1449,6 +1563,7 @@
             <li><a href="#approach">Approach</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#process">Process</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact" class="nav-cta">Schedule Consultation</a></li>
         </ul>
     </nav>
@@ -1637,6 +1752,73 @@
                     <h3>Fund &amp; Finalize</h3>
                     <p>We guide you through trust funding — retitling assets, updating beneficiary designations — so your plan actually works when it matters most.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-inner">
+            <div class="section-label reveal">Common Questions</div>
+            <div class="section-title reveal">Estate Planning FAQ</div>
+            <div class="section-subtitle reveal">Clear answers to the questions we hear most from Orange County families.</div>
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active'); const a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+                        <h3>Do I need a living trust in California?</h3>
+                        <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>For most California residents who own real property, a revocable living trust is strongly recommended. Without a trust, your estate will go through California probate — a court-supervised process that typically takes 12–18 months, costs 4–7% of the estate's value in fees, and is entirely public. A properly funded living trust avoids probate entirely, keeps your affairs private, and ensures seamless asset management if you become incapacitated.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active'); const a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+                        <h3>What is the difference between a will and a trust?</h3>
+                        <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>A will takes effect only after death and must go through probate court. A revocable living trust takes effect immediately upon creation, avoids probate, provides for incapacity management during your lifetime, and keeps your estate distribution private. Most comprehensive California estate plans include both — a trust as the primary vehicle and a pour-over will as a safety net.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active'); const a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+                        <h3>How much does estate planning cost in Orange County?</h3>
+                        <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>We believe in complete transparency on fees. A comprehensive estate plan — including a revocable living trust, pour-over will, powers of attorney, and advance healthcare directive — is offered at a flat fee: $2,500 for individuals and $3,500 for couples. No hourly billing, no surprise invoices. Your initial consultation is complimentary and focused entirely on understanding your specific situation and goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active'); const a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+                        <h3>What is trust administration?</h3>
+                        <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Trust administration is the process of managing and distributing trust assets after the trust creator passes away. The successor trustee has legal obligations including notifying beneficiaries under Probate Code §16061.7, inventorying assets, paying debts and taxes, and distributing assets according to the trust terms. An attorney can guide trustees through each step to ensure compliance with California law and protect against personal liability.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active'); const a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+                        <h3>Do you offer virtual consultations?</h3>
+                        <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes. All consultations are available virtually via secure video conference. We also offer evening and weekend appointments to accommodate busy schedules. Our digital-first approach means you can complete the entire estate planning process — from initial consultation to document signing — without taking time off work.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="/faq.html" class="faq-more reveal">View all frequently asked questions <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
         </div>
     </section>
