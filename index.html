@@ -858,10 +858,26 @@
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+            grid-template-columns: 260px 1fr 1fr;
+            gap: 3.5rem;
             align-items: start;
             margin-top: 3.5rem;
+        }
+
+        .about-photo img {
+            width: 100%;
+            display: block;
+            border: 2px solid var(--gold);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+        }
+
+        .about-photo-caption {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 0.75rem;
         }
 
         .about-text p {
@@ -1458,6 +1474,11 @@
                 gap: 3rem;
             }
 
+            .about-photo {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
             .contact-inner {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -1560,6 +1581,7 @@
         </button>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="attorney.html">Attorney</a></li>
             <li><a href="#approach">Approach</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#process">Process</a></li>
@@ -1613,6 +1635,10 @@
             <div class="section-label reveal">About the Firm</div>
             <div class="section-title reveal">A Different Kind of<br>Estate Planning Practice</div>
             <div class="about-grid">
+                <div class="about-photo reveal">
+                    <img src="DhrumilPatel-26-RT.jpg" alt="Dhrumil Patel, Founding Attorney — Law Office of Dhrumil Patel">
+                    <p class="about-photo-caption">Dhrumil Patel, Founding Attorney</p>
+                </div>
                 <div class="about-text reveal">
                     <p>Dhrumil Patel founded this practice on a simple conviction: estate planning should be as thoughtful and precise as the families it protects, and as modern as the world those families live in. Licensed in both California and New York, he brings a distinctive combination of legal training and deep expertise in data analytics and technology.</p>
                     <p>Before dedicating his practice to estate planning, Dhrumil spent over a decade leading enterprise-scale analytics at a Fortune 500 company — building systems that turn complexity into clarity. He brings that same discipline to every estate plan: understanding your full picture, identifying what matters most, and building a plan with no gaps.</p>
